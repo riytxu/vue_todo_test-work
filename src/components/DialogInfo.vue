@@ -1,0 +1,128 @@
+<template>     
+        <v-card>
+            <v-card-title>
+                <span class="text-h5">Дополнительная информация</span>
+            </v-card-title>
+            <v-card-text>
+                <v-row>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.lastName"
+                            label="Фамилия"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.firstName"
+                            label="Имя"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.patronymic"
+                            label="Отчество"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.position"
+                            label="Должность"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="4"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-checkbox
+                            v-model="infoItem.wokrList"
+                            label="Трудовая книжка сдана"
+                            readonly
+                        >
+                        </v-checkbox>
+                    </v-col>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.salary"
+                            prefix="₽"
+                            label="Оклад"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>      
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.rate"
+                            label="Ставка"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="3"
+                        sm="3"
+                        md="4"
+                    >
+                        <v-text-field
+                            v-model="infoItem.dataOfWork"
+                            label="Дата выхода"
+                            type="date"
+                            outlined
+                            readonly
+                        >
+                        </v-text-field>
+                    </v-col> 
+                </v-row>
+            </v-card-text>
+        </v-card>
+</template>
+
+<script>
+export default {
+    props: {
+        infoItem: {
+            type: Object,
+            required: true
+        }
+    }
+}
+
+</script>
