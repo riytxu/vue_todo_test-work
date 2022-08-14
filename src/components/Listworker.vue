@@ -2,7 +2,7 @@
     <v-container>
         <div>
             <v-btn
-                class="mb-9"
+                class="mb-5 ml-3"
                 color="success"
                 @click="addItem">
                     Добавить работника
@@ -140,6 +140,7 @@ export default {
         delItem(id) {
             let delNumber = this.worker.find(item => item.id == id)
             this.worker.splice(this.worker.indexOf(delNumber), 1)
+            console.log(this.worker)
         },
         delCancelBtn(status) {
             this.dialogDel = status
@@ -155,8 +156,19 @@ export default {
             this.dialogAdd = status
         },
         addNewItem(item) {
+            let freeNumId = null
+            for (let i = 0; i <= this.worker.length - 1; i++) {
+                if (this.worker[i].id !== i) {
+                    freeNumId = i
+                    break
+                } else {
+                    freeNumId = this.worker.length
+                }
+            }
+            item.id = freeNumId
+            console.log(this.freeNumId)
+            console.log(this.worker)
             this.worker.push(item)
-            console.log(this.worker.length)
         }
     },
     computed: {
